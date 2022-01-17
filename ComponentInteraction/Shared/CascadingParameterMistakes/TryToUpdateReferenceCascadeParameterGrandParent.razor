@@ -2,15 +2,15 @@
 
 <div class="border border-danger border-3 p-3">
     <h3>Grand Parent Component</h3>
-    The grand parent component is passing <span class="text-danger">@ExampleInstance1.Data</span> to the descendant components.
+    The grand parent component is passing <span class="text-danger">@ExampleInstance.Data</span> to the descendant components.
     <button type="button" class="btn btn-outline-primary mb-3" @onclick="StateHasChanged">Update UI</button>
-    <CascadingValue Value="ExampleInstance1">
+    <CascadingValue Value="ExampleInstance">
         <TryToUpdateReferenceCascadeParameterParent />
     </CascadingValue>
 </div>
 
 @code {
-    public ExampleClass1 ExampleInstance1 { get; set; } = new()
+    public ExampleClass ExampleInstance { get; set; } = new()
     {
         Data = "Fresh data"
     };

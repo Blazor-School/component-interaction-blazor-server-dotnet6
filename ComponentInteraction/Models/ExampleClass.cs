@@ -1,6 +1,6 @@
 ﻿namespace ComponentInteraction.Models;
 
-public class ExampleClass1
+public class ExampleClass
 {
     public string Data { get; set; } = "";
 }
