@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-body">
             <div>Received Data: <span class="text-danger">@ExampleTransferService.Data</span></div>
-            <label><input type="text" @bind="ExampleTransferService.Data" @bind:event="oninput"/></label>
+            <label><input type="text" @bind="ExampleTransferService.Data" @bind:event="oninput" /></label>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
     protected override void OnInitialized()
     {
         ExampleTransferService.ExampleInstances.CollectionChanged += OnCollectionChanged;
-        ExampleTransferService.DataChanged += OnExampleClassChanged;
+        ExampleTransferService.DataChanged += OnDataClassChanged;
     }
 
     public void AddInstance()
@@ -41,7 +41,7 @@
         InvokeAsync(StateHasChanged);
     }
 
-    public void OnExampleClassChanged(object? sender, string value)
+    public void OnDataClassChanged(object? sender, string value)
     {
         InvokeAsync(StateHasChanged);
     }
@@ -49,6 +49,6 @@
     public void Dispose()
     {
         ExampleTransferService.ExampleInstances.CollectionChanged -= OnCollectionChanged;
-        ExampleTransferService.DataChanged -= OnExampleClassChanged;
+        ExampleTransferService.DataChanged -= OnDataClassChanged;
     }
 }
