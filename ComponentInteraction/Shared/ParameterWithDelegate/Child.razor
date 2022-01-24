@@ -11,11 +11,11 @@
     public ExampleClass ExampleInstance { get; set; } = new();
 
     [Parameter]
-    public Action<ExampleClass> OnExampleInstanceChanged { get; set; } = _ => { };
+    public Action<ExampleClass> ExampleInstanceChanged { get; set; } = _ => { };
 
     public void UpdateValue()
     {
         ExampleInstance.Data = "Value changed at child";
-        OnExampleInstanceChanged?.Invoke(ExampleInstance);
+        ExampleInstanceChanged?.Invoke(ExampleInstance);
     }
 }
